@@ -42,8 +42,9 @@ class ViewController: UIViewController {
         scrollView.addSubview(contentView)
         scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + headerHeight)
         
-        view.addSubview(headerView)
+        
         view.addSubview(scrollView)
+        scrollView.addSubview(headerView)
         scrollView.addSubview(contentView)
         
         NSLayoutConstraint.activate([
@@ -52,15 +53,17 @@ class ViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
+            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            
             contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
 
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            
         ])
         
         scrollView.contentInsetAdjustmentBehavior = .never
