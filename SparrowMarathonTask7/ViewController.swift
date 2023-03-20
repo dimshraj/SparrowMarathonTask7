@@ -78,6 +78,5 @@ extension ViewController: UIScrollViewDelegate {
             }
             headerView.frame = headerFrame
         scrollView.verticalScrollIndicatorInsets.top = headerHeight - offset - self.view.safeAreaInsets.top
-        print(self.view.safeAreaInsets)
     }
 }
