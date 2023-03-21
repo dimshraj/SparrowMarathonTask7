@@ -43,9 +43,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.addSubview(contentView)
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height + headerHeight)
-        
         view.addSubview(scrollView)
         scrollView.addSubview(headerView)
         scrollView.addSubview(contentView)
@@ -74,8 +71,6 @@ extension ViewController: UIScrollViewDelegate {
         var headerFrame = headerView.frame
         if offset <= 0 {
             headerFrame.size.height = headerHeight - offset
-        } else {
-            headerFrame.size.height = 200
         }
         headerView.frame = headerFrame
         scrollView.verticalScrollIndicatorInsets.top = headerHeight - offset - self.view.safeAreaInsets.top
