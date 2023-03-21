@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .white
         view.addSubview(scrollView)
         scrollView.addSubview(headerView)
         scrollView.addSubview(contentView)
